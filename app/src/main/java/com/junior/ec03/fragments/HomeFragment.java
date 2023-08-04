@@ -9,16 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.junior.ec03.R;
+import com.junior.ec03.databinding.FragmentHomeBinding;
 
 
 public class HomeFragment extends Fragment {
-
+    private FragmentHomeBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-           
+
         }
     }
 
@@ -26,6 +27,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container,false);
+        return binding.getRoot();
     }
 }
